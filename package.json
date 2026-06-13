@@ -1,0 +1,10 @@
+{
+  "name": "shivam-logistics",
+  "version": "1.0.0",
+  "description": "Shivam Logistics full-stack website",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "cd backend && npx nodemon server.js",
+    "install:backend": "cd backend && npm install"
+  }
+}
