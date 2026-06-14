@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import ServiceModal from './components/ServiceModal'
 import AiChat from './components/AiChat'
 import FloatingButtons from './components/FloatingButtons'
+import SectionNav from './components/SectionNav'
 import Toast from './components/Toast'
 
 export default function App() {
@@ -57,6 +58,7 @@ export default function App() {
       <Footer />
       <ServiceModal serviceKey={modalKey} onClose={() => setModalKey(null)} />
       <FloatingButtons />
+      <SectionNav />
       <AiChat showToast={showToast} />
     </>
   )

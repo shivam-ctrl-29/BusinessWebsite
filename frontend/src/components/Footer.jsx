@@ -69,7 +69,6 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Quick Links</h4>
           <ul className="footer-links">
-            <li><a href="#track-section" onClick={(e) => { e.preventDefault(); scrollTo('track-section') }}>Track Shipment</a></li>
             <li><a href="#quote" onClick={(e) => { e.preventDefault(); scrollTo('quote') }}>Get Quote</a></li>
             <li style={{ listStyle: 'none' }}><ComingSoon label="Privacy Policy" /></li>
             <li style={{ listStyle: 'none' }}><ComingSoon label="Terms of Service" /></li>

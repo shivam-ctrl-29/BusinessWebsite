@@ -12,7 +12,7 @@ const REVIEWS = [
 export default function Testimonials() {
   const ref = useReveal()
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section" id="reviews">
       <div style={{ textAlign: 'center', maxWidth: 600, margin: '0 auto 0' }}>
         <div className="section-tag" style={{ justifyContent: 'center' }}>Client Reviews</div>
         <h2 className="section-title" style={{ textAlign: 'center' }}>What Our <em>Clients</em> Say</h2>

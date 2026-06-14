@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { IconBox, IconArrowRight, IconMapPin, IconSearch, IconZap, IconShield } from './Icons'
+import { IconArrowRight, IconMapPin, IconSearch, IconZap, IconShield } from './Icons'
 
 const PILLS = [
   { Icon: IconMapPin, label: 'Pan India Delivery' },
@@ -50,11 +50,11 @@ export default function Hero() {
         <h1>Delivering <em>Trust</em><br />Across Every Mile</h1>
         <p className="hero-sub">India's Smart Logistics Partner for Fast, Reliable, and Technology-Driven Transportation Solutions. Pan India coverage with real-time GPS tracking.</p>
         <div className="hero-cta">
-          <button className="btn-primary" onClick={() => document.getElementById('track-section')?.scrollIntoView({ behavior: 'smooth' })}>
-            <IconBox size={18} /> Track Shipment
-          </button>
-          <button className="btn-secondary" onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button className="btn-primary" onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}>
             Get Instant Quote <IconArrowRight size={16} />
+          </button>
+          <button className="btn-secondary" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+            Our Services <IconArrowRight size={16} />
           </button>
         </div>
         <div className="feature-pills">

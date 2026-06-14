@@ -43,8 +43,7 @@ export default function Navbar({ dark, setDark }) {
         {[['services','Services'],['fleet','Fleet'],['industries','Industries'],['about','About'],['branches','Network'],['contact','Contact']].map(([id, label]) => (
           <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>
         ))}
-        <a href="#track-section" onClick={() => setMenuOpen(false)} style={{ color: 'var(--orange)' }}>Track Shipment</a>
-        <a href="#quote" onClick={() => setMenuOpen(false)} style={{ color: 'var(--orange)' }}>Get Quote</a>
+<a href="#quote" onClick={() => setMenuOpen(false)} style={{ color: 'var(--orange)' }}>Get Quote</a>
       </div>
     </>
   )
