@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Stats from './components/Stats'
 import Services from './components/Services'
 import WhyUs from './components/WhyUs'
 import Fleet from './components/Fleet'
@@ -46,7 +45,6 @@ export default function App() {
       <Toast show={toast.show} msg={toast.msg} />
       <Navbar dark={dark} setDark={setDark} />
       <Hero />
-      <Stats />
       <Services onCardClick={setModalKey} />
       <WhyUs />
       <Fleet />
