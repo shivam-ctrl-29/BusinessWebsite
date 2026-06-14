@@ -1,14 +1,37 @@
 import { useReveal } from '../hooks/useReveal'
+import { IconTruck, IconBox, IconSettings, IconArrowRight } from './Icons'
 
 const SERVICES = [
-  { key: 'ftl',      icon: '🚛', title: 'Full Truck Load (FTL)',       desc: 'Dedicated truck for your entire cargo. Maximum security, faster delivery, and cost-effective for large shipments.', tag: 'Manufacturing · Retail' },
-  { key: 'ptl',      icon: '📦', title: 'Part Truck Load (PTL)',       desc: 'Pay only for the space you use. Ideal for smaller consignments consolidated with other shipments.', tag: 'SME · E-Commerce' },
-  { key: 'express',  icon: '⚡', title: 'Express Cargo',               desc: 'Time-critical deliveries with priority handling and express routing across major cities.', tag: 'Pharma · Electronics' },
-  { key: 'fleet',    icon: '🚚', title: 'Dedicated Fleet',             desc: 'Assigned vehicles exclusively for your business needs with dedicated driver and route management.', tag: 'FMCG · Automotive' },
-  { key: 'container',icon: '🏗️', title: 'Container Transport',        desc: 'ISO-certified containers for safe, secure, and weatherproof transportation of sensitive cargo.', tag: 'Exports · Imports' },
-  { key: 'heavy',    icon: '⚙️', title: 'Heavy Equipment Transport',  desc: 'Specialized ODC cargo transportation with permits, escorts, and custom route planning.', tag: 'Construction · Mining' },
-  { key: 'cold',     icon: '❄️', title: 'Temperature Controlled',     desc: 'Refrigerated vehicles maintaining precise temperatures for pharmaceuticals and perishables.', tag: 'Pharma · Food' },
-  { key: 'lastmile', icon: '🏠', title: 'Last Mile Delivery',         desc: 'Efficient delivery to end customers with proof-of-delivery and real-time tracking.', tag: 'E-Commerce · Retail' },
+  {
+    key: 'ftl',
+    Icon: IconTruck,
+    title: 'Full Truck Load',
+    short: 'FTL',
+    desc: 'Dedicated truck exclusively for your cargo — no sharing, no delays. Direct point-to-point delivery with full GPS monitoring and maximum security for large consignments.',
+    tag: 'Manufacturing · Retail · FMCG',
+    benefits: ['Exclusive vehicle use', 'Faster point-to-point delivery', 'Full GPS monitoring', 'Reduced cargo handling'],
+    color: '#FF6B00',
+  },
+  {
+    key: 'ptl',
+    Icon: IconBox,
+    title: 'Part Truck Load',
+    short: 'PTL',
+    desc: 'Pay only for the space your cargo occupies. We consolidate compatible shipments for cost-efficient, reliable delivery across our pan-India hub network.',
+    tag: 'SME · E-Commerce · Retail',
+    benefits: ['Cost-effective for smaller loads', 'Pan India hub network', 'Regular scheduled departures', 'Door-to-door service'],
+    color: '#00BFFF',
+  },
+  {
+    key: 'heavy',
+    Icon: IconSettings,
+    title: 'Heavy Equipment Transport',
+    short: 'ODC',
+    desc: 'Specialized Over-Dimensional Cargo transportation with route surveys, all-India permits, police escorts, and hydraulic multi-axle trailers for your most critical hauls.',
+    tag: 'Construction · Mining · Infrastructure',
+    benefits: ['All India ODC permits', 'Route survey & planning', 'Police escort arrangement', 'Hydraulic multi-axle trailers'],
+    color: '#FF6B00',
+  },
 ]
 
 export default function Services({ onCardClick }) {
@@ -16,15 +39,34 @@ export default function Services({ onCardClick }) {
   return (
     <section className="services-section" id="services">
       <div className="section-tag">What We Offer</div>
-      <h2 className="section-title">End-to-End <em>Logistics</em> Solutions</h2>
-      <p className="section-sub">From heavy haul to last-mile delivery, we provide comprehensive transportation services across India.</p>
-      <div className="services-grid reveal" ref={ref}>
-        {SERVICES.map(s => (
-          <div className="service-card" key={s.key} onClick={() => onCardClick(s.key)}>
-            <div className="service-icon">{s.icon}</div>
-            <h3>{s.title}</h3>
-            <p>{s.desc}</p>
-            <span className="service-tag">{s.tag}</span>
+      <h2 className="section-title">Our Core <em>Services</em></h2>
+      <p className="section-sub">Three specialised logistics solutions, each built for a different cargo challenge — all backed by our 15+ years of pan-India experience.</p>
+
+      <div className="services-grid-3 reveal" ref={ref}>
+        {SERVICES.map(({ key, Icon, title, short, desc, tag, benefits, color }) => (
+          <div className="service-card-3" key={key} onClick={() => onCardClick(key)}>
+            <div className="sc3-header">
+              <div className="sc3-icon" style={{ background: `${color}18`, color }}>
+                <Icon size={30} />
+              </div>
+              <span className="sc3-badge" style={{ background: `${color}18`, color }}>{short}</span>
+            </div>
+            <h3 className="sc3-title">{title}</h3>
+            <p className="sc3-desc">{desc}</p>
+            <ul className="sc3-benefits">
+              {benefits.map(b => (
+                <li key={b}>
+                  <span className="sc3-dot" style={{ background: color }} />
+                  {b}
+                </li>
+              ))}
+            </ul>
+            <div className="sc3-footer">
+              <span className="service-tag">{tag}</span>
+              <button className="sc3-cta" style={{ color }} aria-label={`Learn more about ${title}`}>
+                Learn more <IconArrowRight size={14} />
+              </button>
+            </div>
           </div>
         ))}
       </div>

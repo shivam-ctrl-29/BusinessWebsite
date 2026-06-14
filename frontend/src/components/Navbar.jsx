@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { IconSun, IconMoon } from './Icons'
 
 export default function Navbar({ dark, setDark }) {
   const [scrolled, setScrolled] = useState(false)
@@ -28,12 +29,11 @@ export default function Navbar({ dark, setDark }) {
           ))}
         </ul>
         <div className="nav-actions">
-          <button className="btn-track" onClick={() => scrollTo('track-section')}>Track Shipment</button>
-          <button className="btn-quote" onClick={() => scrollTo('quote')}>Get Quote</button>
-          <button className="theme-toggle" onClick={() => setDark(d => !d)} title="Toggle theme">
-            {dark ? '☀️' : '🌙'}
+<button className="btn-quote" onClick={() => scrollTo('quote')}>Get Quote</button>
+          <button className="theme-toggle" onClick={() => setDark(d => !d)} title={dark ? 'Switch to light mode' : 'Switch to dark mode'} aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}>
+            {dark ? <IconSun size={18} /> : <IconMoon size={18} />}
           </button>
-          <button className="hamburger" onClick={() => setMenuOpen(m => !m)}>
+          <button className="hamburger" onClick={() => setMenuOpen(m => !m)} aria-label="Toggle menu">
             <span /><span /><span />
           </button>
         </div>

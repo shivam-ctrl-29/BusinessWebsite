@@ -1,4 +1,12 @@
 import { useEffect, useRef } from 'react'
+import { IconBox, IconArrowRight, IconMapPin, IconSearch, IconZap, IconShield } from './Icons'
+
+const PILLS = [
+  { Icon: IconMapPin, label: 'Pan India Delivery' },
+  { Icon: IconSearch, label: 'GPS Tracking' },
+  { Icon: IconZap,    label: 'Fast Transit' },
+  { Icon: IconShield, label: 'Secure Transport' },
+]
 
 export default function Hero() {
   const statsRef = useRef([])
@@ -43,15 +51,18 @@ export default function Hero() {
         <p className="hero-sub">India's Smart Logistics Partner for Fast, Reliable, and Technology-Driven Transportation Solutions. Pan India coverage with real-time GPS tracking.</p>
         <div className="hero-cta">
           <button className="btn-primary" onClick={() => document.getElementById('track-section')?.scrollIntoView({ behavior: 'smooth' })}>
-            📦 Track Shipment
+            <IconBox size={18} /> Track Shipment
           </button>
           <button className="btn-secondary" onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}>
-            💰 Get Instant Quote
+            Get Instant Quote <IconArrowRight size={16} />
           </button>
         </div>
         <div className="feature-pills">
-          {[['🗺️','Pan India Delivery'],['📍','GPS Tracking'],['⚡','Fast Transit'],['🔒','Secure Transport']].map(([icon, label]) => (
-            <div className="pill" key={label}><span>{icon}</span>{label}</div>
+          {PILLS.map(({ Icon, label }) => (
+            <div className="pill" key={label}>
+              <Icon size={15} />
+              {label}
+            </div>
           ))}
         </div>
         <div className="hero-stats">
@@ -77,7 +88,7 @@ export default function Hero() {
           <circle cx="100" cy="245" r="28" fill="#1a1a2e"/><circle cx="100" cy="245" r="18" fill="#2d2d44"/><circle cx="100" cy="245" r="8" fill="#FF6B00"/>
           <circle cx="400" cy="245" r="28" fill="#1a1a2e"/><circle cx="400" cy="245" r="18" fill="#2d2d44"/><circle cx="400" cy="245" r="8" fill="#FF6B00"/>
           <rect x="0" y="226" width="520" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
-          <text x="60" y="170" fontFamily="Syne,sans-serif" fontSize="22" fontWeight="800" fill="white" opacity="0.9">SL</text>
+          <text x="60" y="170" fontFamily="Plus Jakarta Sans,sans-serif" fontSize="22" fontWeight="800" fill="white" opacity="0.9">SL</text>
           <rect x="480" y="190" width="20" height="10" rx="2" fill="#FFD700" opacity="0.8"/>
         </svg>
       </div>

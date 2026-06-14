@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { IconBot, IconX, IconSend } from './Icons'
 
 const RESPONSES = {
   track:   "You can track your shipment by entering your tracking number (e.g. SL2024001234) in the tracking section at the top of this page.",
@@ -14,12 +15,12 @@ const RESPONSES = {
 
 function getResponse(msg) {
   const m = msg.toLowerCase()
-  if (m.includes('track'))                                    return RESPONSES.track
+  if (m.includes('track'))                                              return RESPONSES.track
   if (m.includes('quote') || m.includes('price') || m.includes('cost')) return RESPONSES.price
-  if (m.includes('ftl') || m.includes('full truck'))          return RESPONSES.ftl
-  if (m.includes('ptl') || m.includes('part truck'))          return RESPONSES.ptl
+  if (m.includes('ftl') || m.includes('full truck'))                    return RESPONSES.ftl
+  if (m.includes('ptl') || m.includes('part truck'))                    return RESPONSES.ptl
   if (m.includes('cold') || m.includes('refrig') || m.includes('temp')) return RESPONSES.cold
-  if (m.includes('service'))                                  return RESPONSES.service
+  if (m.includes('service'))                                            return RESPONSES.service
   if (m.includes('contact') || m.includes('phone') || m.includes('email')) return RESPONSES.contact
   return RESPONSES.default
 }
@@ -47,18 +48,22 @@ export default function AiChat() {
 
   return (
     <>
-      <button className="ai-chat-btn" onClick={() => setOpen(o => !o)} title="AI Assistant">🤖</button>
+      <button className="ai-chat-btn" onClick={() => setOpen(o => !o)} title="AI Assistant" aria-label="Open AI Assistant">
+        <IconBot size={26} />
+      </button>
       {open && (
         <div className="ai-chat-box">
           <div className="ai-chat-header">
             <div className="ai-chat-header-left">
-              <div className="ai-bot-icon">🤖</div>
+              <div className="ai-bot-icon"><IconBot size={20} /></div>
               <div>
                 <div className="ai-bot-name">Shivu AI</div>
                 <div className="ai-bot-status">● Online · Logistics Assistant</div>
               </div>
             </div>
-            <button className="ai-close-btn" onClick={() => setOpen(false)}>✕</button>
+            <button className="ai-close-btn" onClick={() => setOpen(false)} aria-label="Close chat">
+              <IconX size={16} />
+            </button>
           </div>
           <div className="ai-messages">
             {messages.map((m, i) => (
@@ -74,7 +79,9 @@ export default function AiChat() {
           <div className="ai-input-area">
             <input className="ai-input" value={input} onChange={e => setInput(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && send()} placeholder="Ask me anything..." />
-            <button className="ai-send" onClick={send}>Send</button>
+            <button className="ai-send" onClick={send} aria-label="Send message">
+              <IconSend size={15} />
+            </button>
           </div>
         </div>
       )}

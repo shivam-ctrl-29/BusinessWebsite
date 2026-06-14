@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Loader from './components/Loader'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Tracking from './components/Tracking'
 import Stats from './components/Stats'
 import Services from './components/Services'
 import WhyUs from './components/WhyUs'
@@ -29,6 +28,8 @@ export default function App() {
   }, [dark])
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+    history.replaceState(null, '', '/')
     const t = setTimeout(() => setLoaded(true), 1800)
     return () => clearTimeout(t)
   }, [])
@@ -44,7 +45,6 @@ export default function App() {
       <Toast show={toast.show} msg={toast.msg} />
       <Navbar dark={dark} setDark={setDark} />
       <Hero />
-      <Tracking showToast={showToast} />
       <Stats />
       <Services onCardClick={setModalKey} />
       <WhyUs />

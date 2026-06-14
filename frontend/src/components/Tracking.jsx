@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IconSearch, IconLoader, IconCheck, IconWarning } from './Icons'
 
 export default function Tracking({ showToast }) {
   const [input, setInput] = useState('')
@@ -29,14 +30,15 @@ export default function Tracking({ showToast }) {
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <div className="section-tag" style={{ justifyContent: 'center' }}>Real-Time Tracking</div>
-          <h2 style={{ fontFamily: "'Syne',sans-serif", fontSize: '1.8rem', fontWeight: 800, color: 'var(--text)' }}>Track Your Shipment</h2>
+          <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: '1.8rem', fontWeight: 800, color: 'var(--text)' }}>Track Your Shipment</h2>
         </div>
         <div style={{ display: 'flex', maxWidth: 600, margin: '0 auto 16px' }}>
           <input className="track-input" value={input} onChange={e => setInput(e.target.value)}
             onKeyDown={e => e.key === 'Enter' && track()}
             placeholder="Enter Tracking Number (e.g. SL2024001234)" />
-          <button className="track-btn" onClick={track} disabled={loading}>
-            {loading ? '⏳' : '🔍'} Track
+          <button className="track-btn" onClick={track} disabled={loading} aria-label="Track shipment">
+            {loading ? <IconLoader size={18} /> : <IconSearch size={18} />}
+            <span style={{ marginLeft: 6 }}>Track</span>
           </button>
         </div>
 
@@ -61,7 +63,9 @@ export default function Tracking({ showToast }) {
             <div className="timeline">
               {result.steps.map((s, i) => (
                 <div className="timeline-item" key={i}>
-                  <div className={`timeline-dot${s.done ? ' done' : ''}${s.active ? ' active' : ''}`}>{s.done ? '✓' : '○'}</div>
+                  <div className={`timeline-dot${s.done ? ' done' : ''}${s.active ? ' active' : ''}`}>
+                    {s.done ? <IconCheck size={14} /> : <span style={{ width: 14, height: 14, borderRadius: '50%', border: '2px solid currentColor', display: 'inline-block' }} />}
+                  </div>
                   <div className="timeline-text">
                     <h4 style={{ color: s.done ? 'var(--text)' : 'var(--text-light)' }}>{s.label}</h4>
                     <p>{s.desc}</p>

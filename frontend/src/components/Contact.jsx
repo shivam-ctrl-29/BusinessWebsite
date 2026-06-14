@@ -51,7 +51,7 @@ export default function Contact({ showToast }) {
         </div>
 
         <div className="contact-form-card">
-          <h3 style={{ fontFamily: "'Syne',sans-serif", fontSize: '1.3rem', fontWeight: 800, marginBottom: 24, color: 'var(--text)' }}>Send us a message</h3>
+          <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: '1.3rem', fontWeight: 800, marginBottom: 24, color: 'var(--text)' }}>Send us a message</h3>
           <div className="contact-form-grid">
             <input className="contact-input" placeholder="Your Name"     value={form.name}    onChange={set('name')} />
             <input className="contact-input" placeholder="Company Name"  value={form.company} onChange={set('company')} />

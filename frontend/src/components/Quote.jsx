@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 export default function Quote({ showToast }) {
@@ -6,6 +6,10 @@ export default function Quote({ showToast }) {
   const [form, setForm] = useState({ name:'', contact:'', pickup:'', delivery:'', material:'', weight:'', vehicle:'', date:'', notes:'' })
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
+
+  useEffect(() => {
+    if (!success) ref.current?.classList.add('visible')
+  }, [success])
 
   const set = (k) => (e) => setForm(f => ({ ...f, [k]: e.target.value }))
 
