@@ -6,7 +6,7 @@ const FLEET = [
     capacity: '9 MT',
     specs: ['Length: 32 Feet', 'Open Body', 'GPS Enabled', 'Heavy Haul Ready'],
     use: 'Ideal for steel, pipes, machinery & construction material',
-    accent: '#FF6B00',
+    accent: '#1A6FE8',
     photo: '/assets/trailer-32ft.png',
   },
   {
@@ -14,7 +14,7 @@ const FLEET = [
     capacity: '15–18 MT',
     specs: ['Length: 40 Feet', 'Open Body', 'GPS Enabled', 'ODC Capable'],
     use: 'Best for large industrial equipment, beams & over-sized cargo',
-    accent: '#00BFFF',
+    accent: '#1A6FE8',
     photo: '/assets/trailer-40ft.png',
   },
   {
@@ -22,7 +22,7 @@ const FLEET = [
     capacity: '12 MT Lift',
     specs: ['Hydraulic Crane', '12T Lifting Cap.', 'Telescopic Boom', 'Rotating 360°'],
     use: 'Loading & unloading heavy machinery, steel structures & equipment',
-    accent: '#FF6B00',
+    accent: '#1A6FE8',
     photo: '/assets/hydra-crane.jpg',
   },
   {
@@ -30,15 +30,15 @@ const FLEET = [
     capacity: '0.2–1 m³ Bucket',
     specs: ['Earth Moving', 'Site Loading', 'Telescopic Arm', 'Multi-Terrain'],
     use: 'Excavation, loading, site preparation & heavy earthwork',
-    accent: '#00BFFF',
+    accent: '#1A6FE8',
     photo: '/assets/jcb.jpg',
   },
   {
     name: 'Eicher Truck',
-    capacity: '5 MT',
+    capacity: '7 MT',
     specs: ['City & Highway', 'GPS Enabled', 'Door-to-Door', 'Medium Haul'],
     use: 'Mid-range deliveries, retail distribution & inter-city consignments',
-    accent: '#FF6B00',
+    accent: '#1A6FE8',
     photo: '/assets/eicher-truck.jpg',
   },
 ]
@@ -57,7 +57,7 @@ export default function Fleet() {
             <div className="fc5-top" style={{ borderBottom: `2px solid ${accent}22`, padding: photo ? 0 : undefined }}>
               {photo ? (
                 <div className="fc5-photo-wrap">
-                  <img src={photo} alt={name} className="fc5-photo" />
+                  <img src={photo} alt={name} className="fc5-photo" loading="lazy" decoding="async" />
                   <div className="fc5-cap-overlay" style={{ color: accent }}>{capacity}</div>
                 </div>
               ) : (

@@ -108,37 +108,37 @@ export default function Contact({ showToast }) {
 
           <div className="ct-row">
             <div className="ct-group">
-              <label className="ct-label">Full Name <span className="ct-req">*</span></label>
-              <input className="ct-input" type="text" placeholder="e.g. Rajesh Kumar" value={form.name} onChange={set('name')} />
+              <label className="ct-label" htmlFor="ct-name">Full Name <span className="ct-req">*</span></label>
+              <input id="ct-name" className="ct-input" type="text" placeholder="e.g. Rajesh Kumar" value={form.name} onChange={set('name')} />
             </div>
             <div className="ct-group">
-              <label className="ct-label">Company Name</label>
-              <input className="ct-input" type="text" placeholder="Your company (optional)" value={form.company} onChange={set('company')} />
+              <label className="ct-label" htmlFor="ct-company">Company Name</label>
+              <input id="ct-company" className="ct-input" type="text" placeholder="Your company (optional)" value={form.company} onChange={set('company')} />
             </div>
           </div>
 
           <div className="ct-row" style={{ marginTop: 16 }}>
             <div className="ct-group">
-              <label className="ct-label">Email Address</label>
-              <input className="ct-input" type="email" placeholder="you@company.com" value={form.email} onChange={set('email')} />
+              <label className="ct-label" htmlFor="ct-email">Email Address</label>
+              <input id="ct-email" className="ct-input" type="email" placeholder="you@company.com" value={form.email} onChange={set('email')} />
             </div>
             <div className="ct-group">
-              <label className="ct-label">Phone Number</label>
-              <input className="ct-input" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={set('phone')} />
+              <label className="ct-label" htmlFor="ct-phone">Phone Number</label>
+              <input id="ct-phone" className="ct-input" type="tel" placeholder="+91 98765 43210" value={form.phone} onChange={set('phone')} />
             </div>
           </div>
 
           <div className="ct-group" style={{ marginTop: 16 }}>
-            <label className="ct-label">Service Required</label>
-            <select className="ct-input" value={form.service} onChange={set('service')}>
+            <label className="ct-label" htmlFor="ct-service">Service Required</label>
+            <select id="ct-service" className="ct-input" value={form.service} onChange={set('service')}>
               <option value="">Select a service</option>
               {SERVICES.map(s => <option key={s}>{s}</option>)}
             </select>
           </div>
 
           <div className="ct-group" style={{ marginTop: 16 }}>
-            <label className="ct-label">Your Message <span className="ct-req">*</span></label>
-            <textarea className="ct-input ct-textarea" placeholder="Tell us about your logistics requirements, route, cargo type, timeline…" value={form.message} onChange={set('message')} />
+            <label className="ct-label" htmlFor="ct-message">Your Message <span className="ct-req">*</span></label>
+            <textarea id="ct-message" className="ct-input ct-textarea" placeholder="Tell us about your logistics requirements, route, cargo type, timeline…" value={form.message} onChange={set('message')} />
           </div>
 
           <button className="ct-submit" onClick={submit} disabled={loading}>

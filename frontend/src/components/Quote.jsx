@@ -110,38 +110,38 @@ export default function Quote({ showToast }) {
           <div className="qf-section-label">Your Details</div>
           <div className="qf-row">
             <div className="qf-group">
-              <label className="qf-label">Full Name <span className="qf-req">*</span></label>
-              <input className="qf-input" type="text" placeholder="e.g. Rajesh Kumar" value={form.name} onChange={set('name')} />
+              <label className="qf-label" htmlFor="qf-name">Full Name <span className="qf-req">*</span></label>
+              <input id="qf-name" className="qf-input" type="text" placeholder="e.g. Rajesh Kumar" value={form.name} onChange={set('name')} />
             </div>
             <div className="qf-group">
-              <label className="qf-label">Phone / Email <span className="qf-req">*</span></label>
-              <input className="qf-input" type="text" placeholder="Mobile or email address" value={form.contact} onChange={set('contact')} />
+              <label className="qf-label" htmlFor="qf-contact">Phone / Email <span className="qf-req">*</span></label>
+              <input id="qf-contact" className="qf-input" type="text" placeholder="Mobile or email address" value={form.contact} onChange={set('contact')} />
             </div>
           </div>
 
           <div className="qf-section-label" style={{ marginTop: 24 }}>Shipment Details</div>
           <div className="qf-row">
             <div className="qf-group">
-              <label className="qf-label">Pickup Location <span className="qf-req">*</span></label>
-              <input className="qf-input" type="text" placeholder="e.g. Mumbai, Maharashtra" value={form.pickup} onChange={set('pickup')} />
+              <label className="qf-label" htmlFor="qf-pickup">Pickup Location <span className="qf-req">*</span></label>
+              <input id="qf-pickup" className="qf-input" type="text" placeholder="e.g. Mumbai, Maharashtra" value={form.pickup} onChange={set('pickup')} />
             </div>
             <div className="qf-group">
-              <label className="qf-label">Delivery Location <span className="qf-req">*</span></label>
-              <input className="qf-input" type="text" placeholder="e.g. Delhi, NCR" value={form.delivery} onChange={set('delivery')} />
+              <label className="qf-label" htmlFor="qf-delivery">Delivery Location <span className="qf-req">*</span></label>
+              <input id="qf-delivery" className="qf-input" type="text" placeholder="e.g. Delhi, NCR" value={form.delivery} onChange={set('delivery')} />
             </div>
           </div>
 
           <div className="qf-row" style={{ marginTop: 16 }}>
             <div className="qf-group">
-              <label className="qf-label">Material Type</label>
-              <select className="qf-input" value={form.material} onChange={set('material')}>
+              <label className="qf-label" htmlFor="qf-material">Material Type</label>
+              <select id="qf-material" className="qf-input" value={form.material} onChange={set('material')}>
                 <option value="">Select material</option>
                 {MATERIALS.map(m => <option key={m}>{m}</option>)}
               </select>
             </div>
             <div className="qf-group">
-              <label className="qf-label">Vehicle Type</label>
-              <select className="qf-input" value={form.vehicle} onChange={set('vehicle')}>
+              <label className="qf-label" htmlFor="qf-vehicle">Vehicle Type</label>
+              <select id="qf-vehicle" className="qf-input" value={form.vehicle} onChange={set('vehicle')}>
                 <option value="">Select vehicle</option>
                 {VEHICLES.map(v => <option key={v}>{v}</option>)}
               </select>
@@ -150,18 +150,18 @@ export default function Quote({ showToast }) {
 
           <div className="qf-row" style={{ marginTop: 16 }}>
             <div className="qf-group">
-              <label className="qf-label">Approx. Weight (MT)</label>
-              <input className="qf-input" type="number" placeholder="e.g. 5" value={form.weight} onChange={set('weight')} min="0" />
+              <label className="qf-label" htmlFor="qf-weight">Approx. Weight (MT)</label>
+              <input id="qf-weight" className="qf-input" type="number" placeholder="e.g. 5" value={form.weight} onChange={set('weight')} min="0" />
             </div>
             <div className="qf-group">
-              <label className="qf-label">Required Date</label>
-              <input className="qf-input" type="date" value={form.date} onChange={set('date')} />
+              <label className="qf-label" htmlFor="qf-date">Required Date</label>
+              <input id="qf-date" className="qf-input" type="date" value={form.date} onChange={set('date')} />
             </div>
           </div>
 
           <div className="qf-group" style={{ marginTop: 16 }}>
-            <label className="qf-label">Additional Notes</label>
-            <textarea className="qf-input qf-textarea" placeholder="Special requirements, fragile items, loading / unloading needs…" value={form.notes} onChange={set('notes')} />
+            <label className="qf-label" htmlFor="qf-notes">Additional Notes</label>
+            <textarea id="qf-notes" className="qf-input qf-textarea" placeholder="Special requirements, fragile items, loading / unloading needs…" value={form.notes} onChange={set('notes')} />
           </div>
 
           <button className="qf-submit" onClick={submit} disabled={loading}>

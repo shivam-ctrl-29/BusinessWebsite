@@ -19,7 +19,7 @@ export default function Navbar({ dark, setDark }) {
   return (
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
-        <div className="nav-logo">
+        <div className="nav-logo" onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
           <img src="/assets/logo.jpg" alt="Shivam Logistics Logo" />
           <span className="nav-logo-text">Shivam <span>Logistics</span></span>
         </div>

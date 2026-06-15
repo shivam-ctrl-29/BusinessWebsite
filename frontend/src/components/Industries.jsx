@@ -23,11 +23,11 @@ export default function Industries() {
 
         {/* Header */}
         <div className="coverage-header">
-          <div className="section-tag" style={{ justifyContent: 'center', color: 'rgba(255,255,255,0.55)' }}>Pan India Network</div>
-          <h2 className="section-title" style={{ color: '#fff', textAlign: 'center' }}>
+          <div className="section-tag" style={{ justifyContent: 'center' }}>Pan India Network</div>
+          <h2 className="section-title" style={{ textAlign: 'center' }}>
             We Deliver <em>Everywhere</em><br />India Does Business
           </h2>
-          <p className="section-sub" style={{ textAlign: 'center', margin: '0 auto', color: 'rgba(255,255,255,0.5)', maxWidth: 520 }}>
+          <p className="section-sub" style={{ textAlign: 'center', margin: '0 auto', maxWidth: 520 }}>
             From metro hubs to Tier-2 towns — our network spans 28 states with real-time GPS coverage on every route.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function Industries() {
 
         {/* Bottom CTA strip */}
         <div className="cov-cta-strip">
-          <p>Need delivery to a location not listed? <strong style={{ color: 'var(--orange)' }}>We probably cover it.</strong></p>
+          <p>Need delivery to a location not listed? <strong style={{ color: 'var(--blue)' }}>We probably cover it.</strong></p>
           <button className="btn-primary" style={{ flexShrink: 0 }}
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
             Check Your Route →
