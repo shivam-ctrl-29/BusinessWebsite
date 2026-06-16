@@ -70,6 +70,7 @@ export default function Footer() {
           <h4>Quick Links</h4>
           <ul className="footer-links">
             <li><a href="#quote" onClick={(e) => { e.preventDefault(); scrollTo('quote') }}>Get Quote</a></li>
+            <li><a href="/assets/shivam-logistics-brochure.pdf" download="Shivam-Logistics-Brochure.pdf">Download Brochure</a></li>
             <li style={{ listStyle: 'none' }}><ComingSoon label="Privacy Policy" /></li>
             <li style={{ listStyle: 'none' }}><ComingSoon label="Terms of Service" /></li>
           </ul>

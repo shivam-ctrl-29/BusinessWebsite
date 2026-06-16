@@ -97,6 +97,8 @@ button { cursor: pointer; border: none; outline: none; }
 .feature-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; animation: fadeUp .8s ease .4s both; }
 .pill { display: flex; align-items: center; gap: 7px; background: #F8FAFF; border: 1px solid #E2E8F0; border-radius: 100px; padding: 7px 14px; color: #475569; font-size: .82rem; font-weight: 500; }
 [data-theme="dark"] .pill { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+.hero-brochure-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-size: .88rem; font-weight: 700; color: var(--blue); text-decoration: none; border-bottom: 1.5px dashed rgba(26,111,232,0.35); padding-bottom: 2px; transition: all var(--transition); animation: fadeUp .8s ease .45s both; cursor: pointer; }
+.hero-brochure-link:hover { color: #155DD4; border-bottom-color: #155DD4; gap: 10px; }
 .hero-stats { display: flex; gap: 36px; margin-top: 44px; animation: fadeUp .8s ease .5s both; flex-wrap: wrap; padding-top: 36px; border-top: 1px solid var(--border); }
 .hero-stat-num { font-size: 2.1rem; font-weight: 900; color: var(--navy); line-height: 1; letter-spacing: -.5px; }
 .hero-stat-num span { color: var(--navy); }
