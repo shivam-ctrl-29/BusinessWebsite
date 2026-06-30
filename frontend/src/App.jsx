@@ -12,6 +12,7 @@ import Branches from './components/Branches'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ServiceModal from './components/ServiceModal'
+import LegalModal from './components/LegalModal'
 import AiChat from './components/AiChat'
 import FloatingButtons from './components/FloatingButtons'
 import SectionNav from './components/SectionNav'
@@ -21,6 +22,7 @@ export default function App() {
   const [dark, setDark] = useState(false)
   const [toast, setToast] = useState({ show: false, msg: '' })
   const [modalKey, setModalKey] = useState(null)
+  const [legalDoc, setLegalDoc] = useState(null)
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -53,8 +55,9 @@ export default function App() {
       <Testimonials />
       <Branches />
       <Contact showToast={showToast} />
-      <Footer />
+      <Footer onLegalClick={setLegalDoc} />
       <ServiceModal serviceKey={modalKey} onClose={() => setModalKey(null)} />
+      <LegalModal doc={legalDoc} onClose={() => setLegalDoc(null)} />
       <FloatingButtons />
       <SectionNav />
       <AiChat showToast={showToast} />

@@ -3,10 +3,12 @@ const statuses = ['In Transit', 'At Hub', 'Out For Delivery', 'Delivered'];
 const routes = ['Mumbai → Delhi', 'Pune → Bangalore', 'Chennai → Hyderabad', 'Mumbai → Kolkata'];
 const etas = ['Tomorrow', 'In 2 Days', 'Today by 6 PM', 'Delivered'];
 
+const TRACKING_ID_RE = /^[A-Za-z0-9-]{5,20}$/;
+
 function trackShipment(req, res) {
   const { id } = req.params;
 
-  if (!id || id.length < 5) {
+  if (!id || !TRACKING_ID_RE.test(id)) {
     return res.status(400).json({ success: false, error: 'Invalid tracking number' });
   }
 

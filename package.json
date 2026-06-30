@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node backend/server.js",
     "dev": "cd backend && npx nodemon server.js",
-    "install:backend": "cd backend && npm install"
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build": "cd frontend && npm install && npm run build",
+    "postinstall": "npm run install:backend && npm run build"
   }
 }

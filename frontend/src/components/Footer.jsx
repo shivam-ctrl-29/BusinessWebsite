@@ -19,7 +19,7 @@ function ComingSoon({ label }) {
   )
 }
 
-export default function Footer() {
+export default function Footer({ onLegalClick }) {
   return (
     <footer>
       <div className="footer-grid">
@@ -41,11 +41,9 @@ export default function Footer() {
           <h4>Services</h4>
           <ul className="footer-links">
             {[
-              ['Full Truck Load',  'services'],
-              ['Part Truck Load',  'services'],
-              ['Express Cargo',    'services'],
-              ['Cold Chain',       'services'],
-              ['Last Mile',        'services'],
+              ['Full Truck Load',         'services'],
+              ['Part Truck Load',         'services'],
+              ['Heavy Equipment Transport', 'services'],
             ].map(([label, id]) => (
               <li key={label}>
                 <a href={`#${id}`} onClick={(e) => { e.preventDefault(); scrollTo(id) }}>{label}</a>
@@ -71,18 +69,18 @@ export default function Footer() {
           <ul className="footer-links">
             <li><a href="#quote" onClick={(e) => { e.preventDefault(); scrollTo('quote') }}>Get Quote</a></li>
             <li><a href="/assets/shivam-logistics-brochure.pdf" download="Shivam-Logistics-Brochure.pdf">Download Brochure</a></li>
-            <li style={{ listStyle: 'none' }}><ComingSoon label="Privacy Policy" /></li>
-            <li style={{ listStyle: 'none' }}><ComingSoon label="Terms of Service" /></li>
+            <li><a href="#privacy" onClick={(e) => { e.preventDefault(); onLegalClick('privacy') }}>Privacy Policy</a></li>
+            <li><a href="#terms" onClick={(e) => { e.preventDefault(); onLegalClick('terms') }}>Terms of Service</a></li>
           </ul>
         </div>
 
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Shivam Logistics. All rights reserved. ISO 9001:2015 Certified.</p>
+        <p>© {new Date().getFullYear()} Shivam Logistics. All rights reserved. This website and its content are protected under Indian and international copyright law. ISO 9001:2015 Certified.</p>
         <div className="footer-bottom-links">
-          <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: '.85rem', cursor: 'not-allowed' }}>Privacy</span>
-          <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: '.85rem', cursor: 'not-allowed' }}>Terms</span>
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '.85rem', cursor: 'pointer' }} onClick={() => onLegalClick('privacy')}>Privacy</span>
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '.85rem', cursor: 'pointer' }} onClick={() => onLegalClick('terms')}>Terms</span>
         </div>
       </div>
     </footer>

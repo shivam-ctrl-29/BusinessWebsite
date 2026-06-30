@@ -749,6 +749,13 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 72px 5%
 .modal-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--text); }
 .modal-close { width: 36px; height: 36px; border-radius: 50%; background: var(--light-gray); display: flex; align-items: center; justify-content: center; color: var(--text); cursor: pointer; border: none; font-size: 1rem; transition: all var(--transition); }
 .modal-close:hover { background: var(--blue); color: #fff; }
+.modal-legal { max-width: 680px; }
+.legal-body { font-size: .9rem; line-height: 1.75; color: var(--text-light); }
+.legal-body h4 { color: var(--text); font-size: 1rem; font-weight: 700; margin: 22px 0 8px; }
+.legal-body h4:first-child { margin-top: 0; }
+.legal-body p { margin-bottom: 10px; }
+.legal-body p strong { color: var(--text); }
+.legal-body a { color: var(--blue); text-decoration: underline; }
 
 /* FLOATING BUTTONS */
 .floating-btns { position: fixed; bottom: 28px; left: 28px; display: flex; flex-direction: column; gap: 12px; z-index: 900; }
@@ -777,6 +784,11 @@ footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 72px 5%
 .ai-input:focus { border-color: var(--blue); }
 .ai-send { background: var(--blue); color: #fff; padding: 10px 16px; border-radius: 8px; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .875rem; transition: background var(--transition); border: none; cursor: pointer; }
 .ai-send:hover { background: #155DD4; }
+.ai-send:disabled, .ai-input:disabled { opacity: .6; cursor: not-allowed; }
+.ai-quick-replies { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; align-self: flex-start; max-width: 85%; }
+.ai-quick-reply { background: var(--card-bg); border: 1.5px solid rgba(26,111,232,0.3); color: var(--blue); font-size: .78rem; font-weight: 600; padding: 6px 13px; border-radius: 100px; cursor: pointer; transition: all var(--transition); font-family: 'Plus Jakarta Sans', sans-serif; }
+.ai-quick-reply:hover:not(:disabled) { background: var(--blue); color: #fff; border-color: var(--blue); }
+.ai-quick-reply:disabled { opacity: .5; cursor: not-allowed; }
 .ai-typing { display: flex; gap: 4px; align-items: center; padding: 8px 12px; background: var(--light-gray); border-radius: 4px 12px 12px 12px; align-self: flex-start; }
 .ai-dot { width: 7px; height: 7px; background: var(--mid-gray); border-radius: 50%; animation: typingAnim 1.2s infinite; }
 .ai-dot:nth-child(2) { animation-delay: .2s; }
